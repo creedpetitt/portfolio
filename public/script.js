@@ -26,7 +26,8 @@ const commands = {
     about: async () => `Hi, my name is Creed Petitt!<br><span style="color: var(--text-user);">★</span> Currently, I am studying Computer Engineering at the University of Oklahoma.<br><span style="color: var(--text-user);">★</span> I am very interested in low level systems programming and hardware design, and that's what most of my projects focus on.<br> <span style="color: var(--text-user);">★</span> Also, I have experience with web development and cloud technologies— this website was built using my own custom web framework!<br>`,
     skills: async () => `My technical skills include:<br>
         <span style="color: var(--text-user);">★</span> <strong>Languages:</strong> C++, Rust, Java, Python, SQL, MATLAB<br>
-        <span style="color: var(--text-user);">★</span> <strong>Technologies:</strong> Linux, Docker, AWS, GitHub Actions, Postgres`,
+        <span style="color: var(--text-user);">★</span> <strong>Technologies:</strong> Linux, Postgres, Docker, AWS, GCP, GitHub Actions<br>
+        <span style="color: var(--text-user);">★</span> <strong>Frameworks:</strong> Spring Boot, FastAPI, Fastify, NumPy, React`,
     projects: async () => {
         try {
             const response = await fetch('/api/projects');
