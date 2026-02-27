@@ -22,7 +22,13 @@ std::string generate_uuid() {
 
 int main() {
     App app;
-    app.log_to("server.log").log_level(LogLevel::DEBUG);
+    
+    app.log_to("server.log")
+       .log_level(LogLevel::INFO)
+       .enable_docs(false); 
+
+    // 100 requests per 60 seconds per IP
+    app.use(middleware::rate_limit(100, 60));    
     app.use(middleware::static_files("public"));
 
     app.get("/api/config", [](Response& res) -> Async<void> {
