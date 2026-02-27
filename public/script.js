@@ -23,7 +23,7 @@ const commands = {
         <span style="color: var(--text-success);">≫</span> resume<br>
         <span style="color: var(--text-success);">≫</span> contact<br>
         <span style="color: var(--text-success);">≫</span> clear`,
-    about: async () => `Hi, my name is Creed Petitt!<br>I am a Computer Engineering student at the University of Oklahoma.<br>I am very interested in low level systems programming and hardware design, and that's what most of my projects focus on.<br> I also have experience with web development and cloud technologies- this website was built using my own custom web framework!<br>See ≫ projects`,
+    about: async () => `Hi, my name is Creed Petitt!<br><span style="color: var(--text-user);">★</span> Currently, I am studying Computer Engineering at the University of Oklahoma.<br><span style="color: var(--text-user);">★</span> I am very interested in low level systems programming and hardware design, and that's what most of my projects focus on.<br> <span style="color: var(--text-user);">★</span> Also, I have experience with web development and cloud technologies— this website was built using my own custom web framework!<br>`,
     skills: async () => `My technical skills include:<br>
         <span style="color: var(--text-user);">★</span> <strong>Languages:</strong> C++, Rust, Java, Python, SQL, MATLAB<br>
         <span style="color: var(--text-user);">★</span> <strong>Technologies:</strong> Linux, Docker, AWS, GitHub Actions, Postgres`,
