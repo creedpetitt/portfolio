@@ -1,18 +1,19 @@
 :root {
     /* Main Theme Colors */
-    --bg-page: #cbd5e1; /* Soft bluish-grey background for the page to contrast the dark terminal */
-    --bg-terminal: #1c1c1e; /* macOS dark terminal background */
-    --bg-header: #323233; /* macOS terminal header */
-    --border-color: #454545;
+    --bg-page: #000000; /* Pure black background */
+    --bg-terminal: #0a0a0a; /* Slightly lighter black for the terminal itself */
+    --bg-header: #1a1a1a; /* Dark header */
+    --border-color: #333333;
+    --terminal-glow: rgba(56, 189, 248, 0.1); /* Very subtle cyan glow */
     
     /* Text Colors */
-    --text-main: #f4f4f5; /* Off-white text */
-    --text-highlight: #38bdf8; /* Cyan highlight */
-    --text-user: #0ea5e9; /* Light blue user prompt */
-    --text-path: #4ade80; /* Green path */
-    --text-symbol: #f4f4f5; /* White symbol */
-    --text-success: #4ade80; /* Green success */
-    --text-error: #f87171; /* Red error */
+    --text-main: #f4f4f5;
+    --text-highlight: #38bdf8;
+    --text-user: #0ea5e9;
+    --text-path: #4ade80;
+    --text-symbol: #f4f4f5;
+    --text-success: #4ade80;
+    --text-error: #f87171;
 
     --font-mono: 'Menlo', 'Monaco', 'Courier New', monospace;
 }
@@ -40,8 +41,8 @@ body {
     background-color: var(--bg-terminal);
     border-radius: 10px;
     border: 1px solid var(--border-color);
-    /* Clean realistic drop shadow instead of neon glow */
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0,0,0,0.1);
+    /* Ultra-thin border glow for definition */
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.05), 0 0 15px var(--terminal-glow);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -68,11 +69,28 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    color: transparent; /* Hide icons by default */
+    transition: color 0.1s ease;
+}
+
+.mac-button:hover {
+    color: rgba(0, 0, 0, 0.6); /* Show icon only on specific button hover */
 }
 
 .mac-button.close { background-color: #ff5f56; }
+.mac-button.close::before { content: "✕"; }
+
 .mac-button.minimize { background-color: #ffbd2e; }
+.mac-button.minimize::before { content: "—"; }
+
 .mac-button.maximize { background-color: #27c93f; }
+.mac-button.maximize::before { content: "＋"; }
 
 .header-title {
     color: #a1a1aa;
