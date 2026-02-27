@@ -1,0 +1,38 @@
+cmake_minimum_required(VERSION 3.20)
+project(portfolio)
+
+set(CMAKE_CXX_STANDARD 20)
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Release")
+endif()
+message(STATUS "Blaze: Building in ${CMAKE_BUILD_TYPE} Mode")
+
+include(FetchContent)
+
+# Use Global Blaze Cache (Instant Builds)
+set(FETCHCONTENT_BASE_DIR "$ENV{HOME}/.blaze/cache")
+
+# Download Blaze Framework
+FetchContent_Declare(
+    blaze
+    GIT_REPOSITORY https://github.com/Creed-Petitt/blaze.git
+    GIT_TAG        main
+)
+FetchContent_MakeAvailable(blaze)
+
+# Automatically find all source files (Magic Builds)
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+
+# Create the Executable
+add_executable(portfolio ${SOURCES})
+
+# Map include directory
+target_include_directories(portfolio PRIVATE include)
+
+# Link Libraries
+target_link_libraries(portfolio PRIVATE 
+    blaze::core
+    # [[BLAZE_DRIVERS_START]]
+    # [[BLAZE_DRIVERS_END]]
+)
