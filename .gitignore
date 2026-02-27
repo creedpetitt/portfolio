@@ -9,3 +9,4 @@ bin/
 
 # Secrets
 .env
+deploy.sh
